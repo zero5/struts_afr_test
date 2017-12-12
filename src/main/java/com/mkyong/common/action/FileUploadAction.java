@@ -44,17 +44,12 @@ public class FileUploadAction extends Action{
 	        System.out.println("Server path: " +filePath);
 	        File newFile = new File(filePath, fileName);
               
-	        /*if(!newFile.exists()){
-	          // TODO: AI issue #97, High, AFM, http://desktop-mh1kvhh:8080/#/taskResults/195
-	          // GET /Upload.do HTTP/1.1
-	          // Host: localhost
-	          // Connection: close
-	          // (((com.mkyong.common.form.FileUploadForm) form).getFile().getFileName() == "../tmp/1.txt") && ((!"".equals(((com.mkyong.common.form.FileUploadForm) form).getFile().getFileName()) == true)) && ((!new java.io.File(this.getServlet().getServletContext().getRealPath("/") + "upload", ((com.mkyong.common.form.FileUploadForm) form).getFile().getFileName()).exists() == true))
+	        if(!newFile.exists()){
 	          FileOutputStream fos = new FileOutputStream(newFile);
 	          fos.write(file.getFileData());
 	          fos.flush();
 	          fos.close();
-	        }  */
+	        }  
 	        
 	        request.setAttribute("uploadedFilePath",newFile.getAbsoluteFile());
 	        request.setAttribute("uploadedFileName",newFile.getName());
@@ -64,7 +59,7 @@ public class FileUploadAction extends Action{
             //arbitrary file reading
             String output="";
             String readfile = fileUploadForm.getReadfile();
-            /*if(!("").equals(readfile)){
+            if(!("").equals(readfile)){
                 File f=new File(filePath, readfile);
                 FileInputStream fs = new FileInputStream(f);
                 InputStreamReader in = new InputStreamReader(fs);
@@ -75,7 +70,7 @@ public class FileUploadAction extends Action{
                     output = output + line + "\n<br>";
                 } 
                 br.close();
-            }*/
+            }
            
             request.setAttribute("readfile",output);
             // XSS
