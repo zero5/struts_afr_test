@@ -45,6 +45,11 @@ public class FileUploadAction extends Action{
 	        File newFile = new File(filePath, fileName);
               
 	        if(!newFile.exists()){
+	          // TODO: AI issue #49, High, AFM, http://desktop-mh1kvhh:8080/#/taskResults/75
+	          // GET /Upload.do HTTP/1.1
+	          // Host: localhost
+	          // Connection: close
+	          // (((com.mkyong.common.form.FileUploadForm) form).getFile().getFileName() == "../tmp/1.txt") && ((!"".equals(((com.mkyong.common.form.FileUploadForm) form).getFile().getFileName()) == true)) && ((!new java.io.File(this.getServlet().getServletContext().getRealPath("/") + "upload", ((com.mkyong.common.form.FileUploadForm) form).getFile().getFileName()).exists() == true))
 	          FileOutputStream fos = new FileOutputStream(newFile);
 	          fos.write(file.getFileData());
 	          fos.flush();
