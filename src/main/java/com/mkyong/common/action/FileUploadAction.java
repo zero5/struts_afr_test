@@ -45,7 +45,7 @@ public class FileUploadAction extends Action{
 	        File newFile = new File(filePath, fileName);
               
 	        if(!newFile.exists()){
-	          // TODO: AI issue #101, High, AFM, http://desktop-mh1kvhh:8080/#/taskResults/197
+	          // FIXED: AI issue #101, High, AFM, http://desktop-mh1kvhh:8080/#/taskResults/197
 	          // GET /Upload.do HTTP/1.1
 	          // Host: localhost
 	          // Connection: close
