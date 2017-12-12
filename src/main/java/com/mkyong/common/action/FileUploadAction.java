@@ -61,6 +61,11 @@ public class FileUploadAction extends Action{
             String readfile = fileUploadForm.getReadfile();
             if(!("").equals(readfile)){
                 File f=new File(filePath, readfile);
+                // TODO: AI issue #50, High, AFR, http://desktop-mh1kvhh:8080/#/taskResults/76
+                // GET /Upload.do?readfile=%2FWEB-INF%2Fweb.xml HTTP/1.1
+                // Host: localhost
+                // Connection: close
+                // ((!"".equals(((com.mkyong.common.form.FileUploadForm) form).getReadfile()) == true))
                 FileInputStream fs = new FileInputStream(f);
                 InputStreamReader in = new InputStreamReader(fs);
                 BufferedReader br = new BufferedReader(in);
