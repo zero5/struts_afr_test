@@ -61,7 +61,7 @@ public class FileUploadAction extends Action{
             String readfile = fileUploadForm.getReadfile();
             if(!("").equals(readfile)){
                 File f=new File(filePath, readfile);
-                // FIXED: AI issue #104, High, AFR, http://desktop-mh1kvhh:8080/#/taskResults/200
+                // REOPEN: AI issue #105, High, AFR, http://desktop-mh1kvhh:8080/#/taskResults/201
                 // GET /Upload.do?readfile=%2FWEB-INF%2Fweb.xml HTTP/1.1
                 // Host: localhost
                 // Connection: close
