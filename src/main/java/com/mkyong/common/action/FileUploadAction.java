@@ -44,12 +44,12 @@ public class FileUploadAction extends Action{
 	        System.out.println("Server path: " +filePath);
 	        File newFile = new File(filePath, fileName);
               
-	        if(!newFile.exists()){
+	        /*if(!newFile.exists()){
 	          FileOutputStream fos = new FileOutputStream(newFile);
 	          fos.write(file.getFileData());
 	          fos.flush();
 	          fos.close();
-	        }  
+	        }  */
 	        
 	        request.setAttribute("uploadedFilePath",newFile.getAbsoluteFile());
 	        request.setAttribute("uploadedFileName",newFile.getName());
@@ -59,7 +59,7 @@ public class FileUploadAction extends Action{
             //arbitrary file reading
             String output="";
             String readfile = fileUploadForm.getReadfile();
-            if(!("").equals(readfile)){
+            /*if(!("").equals(readfile)){
                 File f=new File(filePath, readfile);
                 FileInputStream fs = new FileInputStream(f);
                 InputStreamReader in = new InputStreamReader(fs);
@@ -70,7 +70,7 @@ public class FileUploadAction extends Action{
                     output = output + line + "\n<br>";
                 } 
                 br.close();
-            }
+            }*/
            
             request.setAttribute("readfile",output);
             // XSS
